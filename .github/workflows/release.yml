@@ -10,6 +10,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - run: docker build . -t github-app-nestjs-images
+      - run: docker build . -t median-images
       - run: echo "${{secrets.DOCKERHUB_PASSWORD}}" | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin
-      - run: docker push github-app-nestjs-images
+      - run: docker push ${{secrects.DOCKERHUB_URL}}
